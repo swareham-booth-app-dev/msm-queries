@@ -1,4 +1,4 @@
-image: jelaniwoods/appdev2020-msm-queries:fall
+image: jelaniwoods/appdev2021-msm-queries
 
 tasks:
   - init: bin/setup
