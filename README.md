@@ -205,3 +205,63 @@ How many years ago was "Casablanca" released?
 ## Drive the view templates with the data from the database
 
 Now that we've gotten our feet wet with using ActiveRecord to interact with the database, let's put it together with everything we've learned in the past — RCAV, `params`, HTML, etc — to make our app match the target.
+
+## Specs
+<details>
+  <summary>Click here to see names of each test</summary>
+
+<li>/directors/youngest displays only the youngest directors name </li>
+
+<li>/directors/eldest displays only the eldest directors name </li>
+
+<li>/directors lists the names of each Director record in the database </li>
+
+<li>/directors has a 'Show details' link to the details page of each director </li>
+
+<li>/directors/[DIRECTOR ID] displays the name of a specified Director record </li>
+
+<li>/directors/[DIRECTOR ID] displays the dob of a specified Director record </li>
+
+<li>/directors/[DIRECTOR ID] displays the bio of a specified Director record </li>
+
+<li>/directors/[DIRECTOR ID] displays the names of the movies that were directed by the Director </li>
+
+<li>/directors/[DIRECTOR ID] has a 'Show details' link to the details page of each Movie in the Director's filmography </li>
+
+<li>/movies lists the titles of each Movie record in the database </li>
+
+<li>/movies displays the name of the Director who directed the Movie </li>
+
+<li>/movies has a 'Show details' link to the details page of each Movie </li>
+
+<li>/movies/[MOVIE ID] displays the name of the Director who directed the Movie </li>
+
+<li>/movies/[MOVIE ID] displays the title of the Movie </li>
+
+<li>/movies/[MOVIE ID] displays the description of the Movie </li>
+
+<li>/movies/[MOVIE ID] displays the year of the Movie </li>
+
+<li>/movies/[MOVIE ID] displays the duration of the Movie </li>
+
+<li>/actors lists the names of each Actor record in the Actor table </li>
+
+<li>/actors has a 'Show details' link to the details page of each Actor </li>
+
+<li>/actors/ACTOR ID] displays the name of the Actor record </li>
+
+<li>/actors/ACTOR ID] displays the dob of the Actor record </li>
+
+<li>/actors/ACTOR ID] displays the names of every Character the Actor has played </li>
+
+<li>/actors/ACTOR ID] displays the names of the Directors of each Movie the Actor has starred in </li>
+
+<li>Movie has a class defined in app/models/ </li>
+
+<li>Director has a class defined in app/models/ </li>
+
+<li>Actor has a class defined in app/models/ </li>
+
+<li>Character has a class defined in app/models/ </li>
+
+</details>
