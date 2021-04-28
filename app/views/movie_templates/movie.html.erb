@@ -45,14 +45,18 @@
 
   <dt>
     Image
-     <img src="http://robohash.org/<%= movie.image %>">
   </dt>
+  <dd>
+
+     <img src="http://robohash.org/<%= @the_movie.image %>">
+  </dd>
   <dt>
     Director
   </dt>
   <dd>
     <%= @the_director.name %>
   </dd>
+  <dt> Created at </dt>
 
   <dd>
     <%= time_ago_in_words(@the_movie.created_at) %> ago
