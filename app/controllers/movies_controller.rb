@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
   def index
     @list_of_movies = Movie.all
     @list_of_directors = Director.all
-    render({ :template => "movies_templates/index.html.erb" })
+    render({ :template => "movie_templates/index.html.erb" })
   end
 
   def movie_details
