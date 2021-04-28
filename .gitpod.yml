@@ -1,6 +1,7 @@
-image: jelaniwoods/appdev2021-msm-queries
+image: jelaniwoods/appdev2021-msm-queries@sha256:fa45e2514981ee70a5a82e6b6fa29c594155cef4538a0fdb6db8ca0261290b90
 
 tasks:
+  - command: bundle install
   - init: bin/setup
 ports:
   - port: 3000
