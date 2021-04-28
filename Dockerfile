@@ -74,18 +74,29 @@ WORKDIR /base-rails
 COPY Gemfile /base-rails/Gemfile
 COPY Gemfile.lock /base-rails/Gemfile.lock
 RUN /bin/bash -l -c "gem install bundler:2.1.4"
-RUN echo " # No arguments: `git status`\n\
-# With arguments: acts like `git`\n\
+# Git global configuration
+RUN git config --global push.default upstream \
+    && git config --global merge.ff only \
+    && git config --global alias.acm '!f(){ git add -A && git commit -am "${*}"; };f' \
+    && git config --global alias.as '!git add -A && git stash' \
+    && git config --global alias.p 'push' \
+    && git config --global alias.sla 'log --oneline --decorate --graph --all' \
+    && git config --global alias.co 'checkout' \
+    && git config --global alias.cob 'checkout -b'
+
+# Alias 'git' to 'g'
+RUN echo 'export PATH="$PATH:$GITPOD_REPO_ROOT/bin"' >> ~/.bashrc
+RUN echo "# No arguments: 'git status'\n\
+# With arguments: acts like 'git'\n\
 g() {\n\
-  if [[ $# > 0 ]]; then\n\
-    git $@\n\
+  if [[ \$# > 0 ]]; then\n\
+    git \$@\n\
   else\n\
     git status\n\
   fi\n\
-}\n\
-# Complete g like git\n\
+}\n# Complete g like git\n\
 source /usr/share/bash-completion/completions/git\n\
-__git_complete g __git_main" > ~/.bash_aliases
+__git_complete g __git_main" >> ~/.bash_aliases
 
 # USER root
 # RUN mkdir /workspace && chmod 755 /workspace
